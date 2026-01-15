@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "fatalfurniture:block/lamp_down",
+    "east": "fatalfurniture:block/lamp_east",
+    "north": "fatalfurniture:block/lamp_north",
+    "particle": "fatalfurniture:block/lamp_particle",
+    "south": "fatalfurniture:block/lamp_south",
+    "up": "fatalfurniture:block/lamp_up",
+    "west": "fatalfurniture:block/lamp_west"
+  }
+}

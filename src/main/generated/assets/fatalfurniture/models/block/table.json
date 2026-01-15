@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "fatalfurniture:block/table_down",
+    "east": "fatalfurniture:block/table_east",
+    "north": "fatalfurniture:block/table_north",
+    "particle": "fatalfurniture:block/table_particle",
+    "south": "fatalfurniture:block/table_south",
+    "up": "fatalfurniture:block/table_up",
+    "west": "fatalfurniture:block/table_west"
+  }
+}
