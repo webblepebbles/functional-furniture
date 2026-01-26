@@ -1,5 +1,6 @@
 package net.bloffo.fatalfurniture;
 
+import net.bloffo.fatalfurniture.datagen.ModBlockTagProvider;
 import net.bloffo.fatalfurniture.datagen.ModModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -10,5 +11,6 @@ public class FatalFurnitureDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
 	}
 }

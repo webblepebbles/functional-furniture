@@ -13,14 +13,13 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.VELVET_COUCH);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.JADE_COUCH);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.NAVY_COUCH);
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.GOLD_TRIM);
-        blockStateModelGenerator.registerGeneric(ModBlocks.TABLE);
         blockStateModelGenerator.registerGeneric(ModBlocks.LAMP);
-
+        blockStateModelGenerator.registerGeneric(ModBlocks.VELVET_CUSHION);
+        blockStateModelGenerator.registerGeneric(ModBlocks.NAVY_CUSHION);
+        blockStateModelGenerator.registerGeneric(ModBlocks.JADE_CUSHION);
     }
 
     @Override

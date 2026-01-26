@@ -2,6 +2,7 @@ package net.bloffo.fatalfurniture;
 
 import net.bloffo.fatalfurniture.entity.ModEntities;
 import net.bloffo.fatalfurniture.entity.client.ChairRenderer;
+import net.bloffo.fatalfurniture.entity.client.CushionRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
@@ -10,5 +11,6 @@ public class FatalFurnitureClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CUSHION, CushionRenderer::new);
     }
 }

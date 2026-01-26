@@ -1,5 +1,6 @@
 package net.bloffo.fatalfurniture.block.custom;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -8,12 +9,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class mediumTableDeco extends Block {
-    public static final MapCodec<mediumTableDeco> CODEC = createCodec(mediumTableDeco::new);
-    private static final VoxelShape SHAPE =  Block.createCuboidShape(4, 0, 4, 12, 16, 12);
+public class RagBlock extends Block {
+    public static final MapCodec<RagBlock> CODEC = createCodec(RagBlock::new);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 1, 16);
 
 
-    public mediumTableDeco(Settings settings) {
+    public RagBlock(Settings settings) {
         super(settings);
     }
 
