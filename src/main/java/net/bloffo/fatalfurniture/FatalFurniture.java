@@ -1,10 +1,10 @@
 package net.bloffo.fatalfurniture;
 
-import net.bloffo.fatalfurniture.item.ModItems;
 import net.bloffo.fatalfurniture.block.ModBlocks;
+import net.bloffo.fatalfurniture.block.entity.ModBlockEntities;
 import net.bloffo.fatalfurniture.entity.ModEntities;
+import net.bloffo.fatalfurniture.item.ModItems;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,5 +17,6 @@ public class FatalFurniture implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModBlockEntities.registerBlockEntities();
 	}
 }

@@ -11,7 +11,7 @@
 		"homepage": "https://www.youtube.com/@Bloffo",
 		"sources": "https://github.com/Bloffo/fatal-furniture-fabric-1.21.1"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/fatal-furniture/icon.png",
 	"environment": "*",
 	"entrypoints": {
