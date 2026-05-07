@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "C": {
+      "item": "fatalfurniture:green_cushion"
+    }
+  },
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:green_couch"
+    }
+  }

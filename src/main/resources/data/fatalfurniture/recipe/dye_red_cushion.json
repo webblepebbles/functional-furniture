@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "fatalfurniture:black_cushion"
+      },
+      {
+        "item": "fatalfurniture:blue_cushion"
+      },
+      {
+        "item": "fatalfurniture:brown_cushion"
+      },
+      {
+        "item": "fatalfurniture:cyan_cushion"
+      },
+      {
+        "item": "fatalfurniture:gray_cushion"
+      },
+      {
+        "item": "fatalfurniture:green_cushion"
+      },
+      {
+        "item": "fatalfurniture:light_blue_cushion"
+      },
+      {
+        "item": "fatalfurniture:light_gray_cushion"
+      },
+      {
+        "item": "fatalfurniture:lime_cushion"
+      },
+      {
+        "item": "fatalfurniture:magenta_cushion"
+      },
+      {
+        "item": "fatalfurniture:orange_cushion"
+      },
+      {
+        "item": "fatalfurniture:pink_cushion"
+      },
+      {
+        "item": "fatalfurniture:purple_cushion"
+      },
+      {
+        "item": "fatalfurniture:yellow_cushion"
+      },
+      {
+        "item": "fatalfurniture:white_cushion"
+      }
+    ],
+    {
+      "item": "minecraft:red_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:red_cushion"
+  }
+}

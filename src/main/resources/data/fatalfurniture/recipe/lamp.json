@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    "W",
+    "T",
+    "R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:lamp"
+    }
+  }

@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "fatalfurniture:black_pouffe"
+      },
+      {
+        "item": "fatalfurniture:blue_pouffe"
+      },
+      {
+        "item": "fatalfurniture:brown_pouffe"
+      },
+      {
+        "item": "fatalfurniture:cyan_pouffe"
+      },
+      {
+        "item": "fatalfurniture:white_pouffe"
+      },
+      {
+        "item": "fatalfurniture:green_pouffe"
+      },
+      {
+        "item": "fatalfurniture:light_blue_pouffe"
+      },
+      {
+        "item": "fatalfurniture:light_gray_pouffe"
+      },
+      {
+        "item": "fatalfurniture:lime_pouffe"
+      },
+      {
+        "item": "fatalfurniture:magenta_pouffe"
+      },
+      {
+        "item": "fatalfurniture:orange_pouffe"
+      },
+      {
+        "item": "fatalfurniture:pink_pouffe"
+      },
+      {
+        "item": "fatalfurniture:purple_pouffe"
+      },
+      {
+        "item": "fatalfurniture:yellow_pouffe"
+      },
+      {
+        "item": "fatalfurniture:red_pouffe"
+      }
+    ],
+    {
+      "item": "minecraft:gray_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:gray_pouffe"
+  }
+}

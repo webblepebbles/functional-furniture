@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "fatalfurniture:block/light_gray_couch",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "fatalfurniture:block/light_gray_couch"
+    },
+    "facing=south": {
+      "model": "fatalfurniture:block/light_gray_couch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fatalfurniture:block/light_gray_couch",
+      "y": 270
+    }
+  }
+}

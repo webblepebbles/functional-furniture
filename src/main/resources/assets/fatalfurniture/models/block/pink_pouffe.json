@@ -1,0 +1,108 @@
+{
+	"credit": "Made with Blockbench",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 135, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.625, 0.625, 0.625 ]
+		},
+		"head": {
+			"rotation": [ 0, -90, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 1, 1, 1 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 75, -135, 0 ],
+			"translation": [ 0, 2.5, 0],
+			"scale": [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_righthand": {
+			"rotation": [
+				75,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"firstperson_lefthand": {
+			"rotation": [
+				0,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"ground": {
+			"rotation": [
+				0,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				5,
+				0
+			],
+			"scale": [
+				0.25,
+				0.25,
+				0.25
+			]
+		}
+	},
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "fatalfurniture:block/pink_pouffe",
+		"particle": "minecraft:block/pink_wool"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 7, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, -1, 7]},
+			"faces": {
+				"north": {"uv": [5, 0, 10, 3.5], "texture": "#1"},
+				"east": {"uv": [5, 3.5, 10, 7], "texture": "#1"},
+				"south": {"uv": [5, 7, 10, 10.5], "texture": "#1"},
+				"west": {"uv": [0, 10, 5, 13.5], "texture": "#1"},
+				"up": {"uv": [5, 5, 0, 0], "texture": "#1"},
+				"down": {"uv": [5, 5, 0, 10], "texture": "#1"}
+			}
+		}
+	]
+}

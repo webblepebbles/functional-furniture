@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "fatalfurniture:black_couch"
+      },
+      {
+        "item": "fatalfurniture:blue_couch"
+      },
+      {
+        "item": "fatalfurniture:white_couch"
+      },
+      {
+        "item": "fatalfurniture:cyan_couch"
+      },
+      {
+        "item": "fatalfurniture:gray_couch"
+      },
+      {
+        "item": "fatalfurniture:green_couch"
+      },
+      {
+        "item": "fatalfurniture:light_blue_couch"
+      },
+      {
+        "item": "fatalfurniture:light_gray_couch"
+      },
+      {
+        "item": "fatalfurniture:lime_couch"
+      },
+      {
+        "item": "fatalfurniture:magenta_couch"
+      },
+      {
+        "item": "fatalfurniture:orange_couch"
+      },
+      {
+        "item": "fatalfurniture:pink_couch"
+      },
+      {
+        "item": "fatalfurniture:purple_couch"
+      },
+      {
+        "item": "fatalfurniture:yellow_couch"
+      },
+      {
+        "item": "fatalfurniture:red_couch"
+      }
+    ],
+    {
+      "item": "minecraft:brown_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:brown_couch"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "minecraft:wood_slabs"
+    },
+    "C": {
+      "item": "fatalfurniture:light_gray_cushion"
+    }
+  },
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "fatalfurniture:light_gray_pouffe"
+    }
+  }
