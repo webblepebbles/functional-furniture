@@ -2,6 +2,7 @@ package net.bloffo.fatalfurniture;
 
 import net.bloffo.fatalfurniture.block.ModBlocks;
 import net.bloffo.fatalfurniture.block.entity.ModBlockEntities;
+import net.bloffo.fatalfurniture.block.entity.renderer.NookBlockEntityRenderer;
 import net.bloffo.fatalfurniture.block.entity.renderer.TableBlockEntityRenderer;
 import net.bloffo.fatalfurniture.entity.ModEntities;
 import net.bloffo.fatalfurniture.entity.client.ChairRenderer;
@@ -20,5 +21,6 @@ public class    FatalFurnitureClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CUSHION, CushionRenderer::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.TABLE_BE, TableBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.NOOK_BE, NookBlockEntityRenderer::new);
     }
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "fatalfurniture:block/dark_oak_nook",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "fatalfurniture:block/dark_oak_nook"
+    },
+    "facing=south": {
+      "model": "fatalfurniture:block/dark_oak_nook",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fatalfurniture:block/dark_oak_nook",
+      "y": 270
+    }
+  }
+}

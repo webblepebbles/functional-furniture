@@ -1,6 +1,7 @@
 package net.bloffo.fatalfurniture.item.custom;
 
 import net.bloffo.fatalfurniture.block.ModBlocks;
+import net.bloffo.fatalfurniture.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
@@ -32,7 +33,7 @@ public class WirecutterItem extends Item {
                 world.setBlockState(context.getBlockPos(), WirecutterMap.get(clickedBlock).getDefaultState());
                 context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
                         item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-                world.playSound(null, context.getBlockPos(), SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS);
+                world.playSound(null, context.getBlockPos(), ModSounds.WIRECUTTERS_SNIP, SoundCategory.BLOCKS);
                 return ActionResult.SUCCESS;
             }
 

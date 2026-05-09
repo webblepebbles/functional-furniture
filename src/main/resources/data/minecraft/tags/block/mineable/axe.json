@@ -1,6 +1,7 @@
 {
   "values": [
     "fatalfurniture:lamp",
+    "fatalfurniture:riggedlamp",
     "fatalfurniture:table",
     "fatalfurniture:riggedlamp",
     "fatalfurniture:white_couch",
@@ -34,6 +35,17 @@
     "fatalfurniture:blue_pouffe",
     "fatalfurniture:purple_pouffe",
     "fatalfurniture:magenta_pouffe",
-    "fatalfurniture:pink_pouffe"
+    "fatalfurniture:pink_pouffe",
+    "fatalfurniture:oak_nook",
+    "fatalfurniture:birch_nook",
+    "fatalfurniture:dark_oak_nook",
+    "fatalfurniture:spruce_nook",
+    "fatalfurniture:jungle_nook",
+    "fatalfurniture:acacia_nook",
+    "fatalfurniture:mangrove_nook",
+    "fatalfurniture:warped_nook",
+    "fatalfurniture:crimson_nook",
+    "fatalfurniture:bamboo_nook",
+    "fatalfurniture:cherry_nook"
   ]
 }

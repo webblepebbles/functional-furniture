@@ -88,7 +88,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "fatalfurniture:block/lamp",
-		"particle": "fatalfurniture:block/wood"
+		"particle": "minecraft:block/dark_oak_planks"
 	},
 	"elements": [
 		{

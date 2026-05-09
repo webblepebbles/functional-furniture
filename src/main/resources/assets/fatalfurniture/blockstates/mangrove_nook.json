@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "fatalfurniture:block/mangrove_nook",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "fatalfurniture:block/mangrove_nook"
+    },
+    "facing=south": {
+      "model": "fatalfurniture:block/mangrove_nook",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fatalfurniture:block/mangrove_nook",
+      "y": 270
+    }
+  }
+}

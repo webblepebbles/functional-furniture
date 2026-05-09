@@ -1,6 +1,7 @@
 package net.bloffo.fatalfurniture.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.bloffo.fatalfurniture.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -35,7 +36,7 @@ public class LampBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if(!world.isClient()) {
-            world.playSound(null, pos, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON, SoundCategory.BLOCKS);
+            world.playSound(null, pos, ModSounds.LAMP_CLICKS, SoundCategory.BLOCKS);
             world.setBlockState(pos, state.cycle(ON));
         }
             return ActionResult.SUCCESS;

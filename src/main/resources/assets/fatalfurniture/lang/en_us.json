@@ -48,11 +48,29 @@
   "block.fatalfurniture.pink_cushion": "Pink Cushion",
   "block.fatalfurniture.pink_pouffe": "Pink Pouffe",
 
+  "block.fatalfurniture.oak_nook": "Oak Nook",
+  "block.fatalfurniture.birch_nook": "Birch Nook",
+  "block.fatalfurniture.dark_oak_nook": "Dark Oak Nook",
+  "block.fatalfurniture.spruce_nook": "Spruce Nook",
+  "block.fatalfurniture.jungle_nook": "Jungle Nook",
+  "block.fatalfurniture.acacia_nook": "Acacia Nook",
+  "block.fatalfurniture.mangrove_nook": "Mangrove Nook",
+  "block.fatalfurniture.warped_nook": "Warped Nook",
+  "block.fatalfurniture.crimson_nook": "Crimson Nook",
+  "block.fatalfurniture.bamboo_nook": "Bamboo Nook",
+  "block.fatalfurniture.cherry_nook": "Cherry Nook",
+  "block.fatalfurniture.pale_oak_nook": "Pale Oak Nook",
+
   "block.fatalfurniture.table": "Table",
-  "block.fatalfurniture.lamp": "lamp",
+  "block.fatalfurniture.lamp": "Lamp",
+  "block.fatalfurniture.riggedlamp": "Rigged Lamp",
 
   "item.fatalfurniture.wirecutters": "Wire Cutters",
   "item.fatalfurniture.knife": "Knife",
 
-  "death.attack.knife": "%1$s sat on a knife"
+  "death.attack.knife": "%1$s sat on a knife",
+
+  "sounds.fatalfurniture.lamp_clicks": "Lamp clicks",
+  "sounds.fatalfurniture.pillow_rustles": "Pillow rustles",
+  "sounds.fatalfurniture.wirecutters_snip": "Wire cutters snip"
 }

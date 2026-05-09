@@ -3,6 +3,7 @@ package net.bloffo.fatalfurniture.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.bloffo.fatalfurniture.entity.ModEntities;
 import net.bloffo.fatalfurniture.entity.custom.CushionEntity;
+import net.bloffo.fatalfurniture.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -15,6 +16,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
@@ -49,6 +51,7 @@ public class PouffeBlock extends Block{
             List<CushionEntity> entities = world.getEntitiesByType(ModEntities.CUSHION, new Box(pos), cushion -> true);
             if(entities.isEmpty()) {
                 if (!player.isSneaking()) {
+                    world.playSound(player, pos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
                     entity = ModEntities.CHAIR.spawn((ServerWorld) world, pos, SpawnReason.TRIGGERED);
                     if (state.get(KNIFE)) {
                         assert entity != null;

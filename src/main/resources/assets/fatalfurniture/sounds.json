@@ -1,0 +1,20 @@
+{
+  "lamp_clicks": {
+    "subtitles": "sounds.fatalfurniture.lamp_clicks",
+    "sounds": [
+      "fatalfurniture:lamp_clicks"
+    ]
+  },
+  "cushion_rustles": {
+    "subtitles": "sounds.fatalfurniture.cushion_rustles",
+    "sounds": [
+      "fatalfurniture:pillow_rustles"
+    ]
+  },
+  "wirecutters_snip": {
+    "subtitles": "sounds.fatalfurniture.wirecutters_snip",
+    "sounds": [
+      "fatalfurniture:wirecutters_snip"
+    ]
+  }
+}

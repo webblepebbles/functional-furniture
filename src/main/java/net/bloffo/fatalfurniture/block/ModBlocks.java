@@ -124,6 +124,29 @@ public class ModBlocks {
     public static final Block CYAN_POUFFE = registerBlock("cyan_pouffe", new PouffeBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.5f).sounds(BlockSoundGroup.WOOL).mapColor(DyeColor.CYAN)));
 
+    public static final Block OAK_NOOK = registerBlock("oak_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.OAK_TAN)));
+    public static final Block BIRCH_NOOK = registerBlock("birch_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block DARK_OAK_NOOK = registerBlock("dark_oak_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.BROWN)));
+    public static final Block SPRUCE_NOOK = registerBlock("spruce_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.SPRUCE_BROWN)));
+    public static final Block JUNGLE_NOOK = registerBlock("jungle_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.DIRT_BROWN)));
+    public static final Block ACACIA_NOOK = registerBlock("acacia_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.ORANGE)));
+    public static final Block MANGROVE_NOOK = registerBlock("mangrove_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.RED)));
+    public static final Block WARPED_NOOK = registerBlock("warped_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.NETHER_WOOD).mapColor(MapColor.DARK_AQUA)));
+    public static final Block CRIMSON_NOOK = registerBlock("crimson_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.NETHER_WOOD).mapColor(MapColor.DULL_PINK)));
+    public static final Block BAMBOO_NOOK = registerBlock("bamboo_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.BAMBOO_WOOD).mapColor(MapColor.YELLOW)));
+    public static final Block CHERRY_NOOK = registerBlock("cherry_nook", new NookBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(MapColor.TERRACOTTA_WHITE)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(FatalFurniture.MOD_ID, name), block);
@@ -188,8 +211,20 @@ public class ModBlocks {
             entries.add(PINK_POUFFE);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            entries.add(RIGGEDLAMP);
             entries.add(LAMP);
             entries.add(TABLE);
+            entries.add(OAK_NOOK);
+            entries.add(BIRCH_NOOK);
+            entries.add(DARK_OAK_NOOK);
+            entries.add(SPRUCE_NOOK);
+            entries.add(JUNGLE_NOOK);
+            entries.add(ACACIA_NOOK);
+            entries.add(MANGROVE_NOOK);
+            entries.add(CRIMSON_NOOK);
+            entries.add(WARPED_NOOK);
+            entries.add(BAMBOO_NOOK);
+            entries.add(CHERRY_NOOK);
         });
     }
 }
