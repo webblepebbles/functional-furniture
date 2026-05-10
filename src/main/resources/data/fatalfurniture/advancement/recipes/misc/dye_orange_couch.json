@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:dye_orange_couch"
+      }
+    },
+    "has_orange_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:orange_dye"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orange_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:dye_orange_couch"
+    ]
+  }
+}

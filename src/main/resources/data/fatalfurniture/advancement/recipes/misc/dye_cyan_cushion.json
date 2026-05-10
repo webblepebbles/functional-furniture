@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:dye_cyan_cushion"
+      }
+    },
+    "has_cyan_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cyan_dye"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cyan_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:dye_cyan_cushion"
+    ]
+  }
+}

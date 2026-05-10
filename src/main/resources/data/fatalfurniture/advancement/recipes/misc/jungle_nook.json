@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:jungle_nook"
+      }
+    },
+    "has_jungle_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:jungle_planks"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jungle_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:jungle_nook"
+    ]
+  }
+}

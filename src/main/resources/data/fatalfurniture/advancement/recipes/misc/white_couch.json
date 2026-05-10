@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:white_couch"
+      }
+    },
+    "has_white_cushion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fatalfurniture:white_cushion"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_cushion"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:white_couch"
+    ]
+  }
+}

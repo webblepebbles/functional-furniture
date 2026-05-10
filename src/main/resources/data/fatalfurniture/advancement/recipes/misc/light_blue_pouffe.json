@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:light_blue_pouffe"
+      }
+    },
+    "has_light_blue_cushion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fatalfurniture:light_blue_cushion"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_blue_cushion"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:light_blue_pouffe"
+    ]
+  }
+}

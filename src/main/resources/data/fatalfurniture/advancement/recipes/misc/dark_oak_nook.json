@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:dark_oak_nook"
+      }
+    },
+    "has_dark_oak_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:dark_oak_planks"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_oak_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:dark_oak_nook"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:pink_couch"
+      }
+    },
+    "has_pink_cushion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fatalfurniture:pink_cushion"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_cushion"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:pink_couch"
+    ]
+  }
+}

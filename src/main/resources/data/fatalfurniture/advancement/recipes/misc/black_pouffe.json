@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:black_pouffe"
+      }
+    },
+    "has_black_cushion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fatalfurniture:black_cushion"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_cushion"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:black_pouffe"
+    ]
+  }
+}

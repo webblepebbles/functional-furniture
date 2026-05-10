@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:dye_brown_pouffe"
+      }
+    },
+    "has_brown_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brown_dye"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brown_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:dye_brown_pouffe"
+    ]
+  }
+}

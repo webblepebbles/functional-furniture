@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:red_pouffe"
+      }
+    },
+    "has_red_cushion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fatalfurniture:red_cushion"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_cushion"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:red_pouffe"
+    ]
+  }
+}

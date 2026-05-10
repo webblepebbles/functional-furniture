@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fatalfurniture:dye_purple_pouffe"
+      }
+    },
+    "has_purple_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:purple_dye"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purple_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fatalfurniture:dye_purple_pouffe"
+    ]
+  }
+}

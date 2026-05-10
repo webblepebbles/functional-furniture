@@ -1,0 +1,134 @@
+{
+	"credit": "Made with Blockbench",
+	"display": {
+		"gui": {
+			"rotation": [ 30, 135, 0 ],
+			"translation": [ 0, 0, 0],
+			"scale":[ 0.625, 0.625, 0.625 ]
+		},
+		"head": {
+			"rotation": [ 0, -90, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 1, 1, 1 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 75, -135, 0 ],
+			"translation": [ 0, 2.5, 0],
+			"scale": [ 0.375, 0.375, 0.375 ]
+		},
+		"thirdperson_righthand": {
+			"rotation": [
+				75,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"firstperson_lefthand": {
+			"rotation": [
+				0,
+				-225,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				-225,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.375,
+				0.375,
+				0.375
+			]
+		},
+		"ground": {
+			"rotation": [
+				0,
+				-135,
+				0
+			],
+			"translation": [
+				0,
+				5,
+				0
+			],
+			"scale": [
+				0.25,
+				0.25,
+				0.25
+			]
+		}
+	},
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "fatalfurniture:block/candle_stick",
+		"particle": "minecraft:block/hopper_outside"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 2, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [9, 0, 12, 1], "texture": "#0"},
+				"east": {"uv": [9, 1, 12, 2], "texture": "#0"},
+				"south": {"uv": [2, 9, 5, 10], "texture": "#0"},
+				"west": {"uv": [9, 2, 12, 3], "texture": "#0"},
+				"up": {"uv": [9, 3, 6, 0], "texture": "#0"},
+				"down": {"uv": [5, 6, 2, 9], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 14, 5],
+			"to": [11, 16, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 16, 7]},
+			"faces": {
+				"north": {"uv": [9, 1, 12, 0], "texture": "#0"},
+				"east": {"uv": [9, 2, 12, 1], "texture": "#0"},
+				"south": {"uv": [2, 10, 5, 9], "texture": "#0"},
+				"west": {"uv": [9, 3, 12, 2], "texture": "#0"},
+				"up": {"uv": [5, 9, 2, 6], "texture": "#0"},
+				"down": {"uv": [9, 0, 6, 3], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 2, 6],
+			"to": [10, 14, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 12, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 6], "texture": "#0"},
+				"east": {"uv": [2, 0, 4, 6], "texture": "#0"},
+				"south": {"uv": [4, 0, 6, 6], "texture": "#0"},
+				"west": {"uv": [0, 6, 2, 12], "texture": "#0"},
+				"up": {"uv": [10, 8, 8, 6], "texture": "#0"},
+				"down": {"uv": [10, 8, 8, 10], "texture": "#0"}
+			}
+		}
+	]
+}

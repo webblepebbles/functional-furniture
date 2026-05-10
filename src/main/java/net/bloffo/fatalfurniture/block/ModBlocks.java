@@ -54,9 +54,10 @@ public class ModBlocks {
             .nonOpaque().strength(1f).luminance(State -> State.get(LampBlock.ON) ? 12 : 0).sounds(BlockSoundGroup.WOOD)));
     public static final Block RIGGEDLAMP = registerBlock("riggedlamp", new RiggedLampBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1f).sounds(BlockSoundGroup.WOOD)));
-
     public static final Block TABLE = registerBlock("table", new TableBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.5f).sounds(BlockSoundGroup.WOOD).mapColor(DyeColor.BROWN)));
+    public static final Block CANDLE_STICK = registerBlock("candle_stick", new CandleStickBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(2.0f).sounds(BlockSoundGroup.METAL).mapColor(MapColor.IRON_GRAY)));
 
     public static final Block WHITE_CUSHION = registerBlock("white_cushion", new CushionBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.5f).sounds(BlockSoundGroup.WOOL).mapColor(DyeColor.WHITE)));
@@ -214,6 +215,7 @@ public class ModBlocks {
             entries.add(RIGGEDLAMP);
             entries.add(LAMP);
             entries.add(TABLE);
+            entries.add(CANDLE_STICK);
             entries.add(OAK_NOOK);
             entries.add(BIRCH_NOOK);
             entries.add(DARK_OAK_NOOK);

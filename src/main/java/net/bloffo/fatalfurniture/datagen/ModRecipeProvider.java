@@ -1,5 +1,6 @@
 package net.bloffo.fatalfurniture.datagen;
 
+import net.bloffo.fatalfurniture.block.custom.CouchBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
@@ -14,6 +15,5 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-
     }
 }

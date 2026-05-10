@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "P": {
-      "item": "minecraft:birch_planks"
+    "I": {
+      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [
-    " P ",
-    "P P",
-    " P "
+    "I",
+    "I",
+    "I"
   ],
   "result": {
     "count": 1,
-    "id": "fatalfurniture:birch_nook"
+    "id": "fatalfurniture:candle_stick"
     }
   }
