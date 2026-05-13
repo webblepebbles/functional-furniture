@@ -78,7 +78,6 @@ public class KnifeItem extends ToolItem {
             world.playSound(playerEntity, blockPos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(PouffeBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
-            System.out.println("knife");
             if (playerEntity != null) {
                 context.getStack().decrement(1);
             }
@@ -89,7 +88,6 @@ public class KnifeItem extends ToolItem {
             world.playSound(playerEntity, blockPos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(CushionBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
-            System.out.println("knife");
             if (playerEntity != null) {
                 context.getStack().decrement(1);
             }

@@ -6,10 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -57,7 +54,7 @@ public class ModBlocks {
     public static final Block TABLE = registerBlock("table", new TableBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.5f).sounds(BlockSoundGroup.WOOD).mapColor(DyeColor.BROWN)));
     public static final Block CANDLE_STICK = registerBlock("candle_stick", new CandleStickBlock(AbstractBlock.Settings.create()
-            .nonOpaque().strength(2.0f).sounds(BlockSoundGroup.METAL).mapColor(MapColor.IRON_GRAY)));
+            .nonOpaque().strength(2.0f).sounds(BlockSoundGroup.METAL).mapColor(MapColor.IRON_GRAY)), new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON, 4, -3.0f)));
 
     public static final Block WHITE_CUSHION = registerBlock("white_cushion", new CushionBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.5f).sounds(BlockSoundGroup.WOOL).mapColor(DyeColor.WHITE)));
@@ -148,14 +145,48 @@ public class ModBlocks {
     public static final Block CHERRY_NOOK = registerBlock("cherry_nook", new NookBlock(AbstractBlock.Settings.create()
             .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(MapColor.TERRACOTTA_WHITE)));
 
+    public static final Block OAK_DRAWERS = registerBlock("oak_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.OAK_TAN)));
+    public static final Block BIRCH_DRAWERS = registerBlock("birch_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block DARK_OAK_DRAWERS = registerBlock("dark_oak_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.BROWN)));
+    public static final Block SPRUCE_DRAWERS = registerBlock("spruce_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.SPRUCE_BROWN)));
+    public static final Block JUNGLE_DRAWERS = registerBlock("jungle_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.DIRT_BROWN)));
+    public static final Block ACACIA_DRAWERS = registerBlock("acacia_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.ORANGE)));
+    public static final Block MANGROVE_DRAWERS = registerBlock("mangrove_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.WOOD).mapColor(MapColor.RED)));
+    public static final Block WARPED_DRAWERS = registerBlock("warped_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.NETHER_WOOD).mapColor(MapColor.DARK_AQUA)));
+    public static final Block CRIMSON_DRAWERS = registerBlock("crimson_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.NETHER_WOOD).mapColor(MapColor.DULL_PINK)));
+    public static final Block BAMBOO_DRAWERS = registerBlock("bamboo_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.BAMBOO_WOOD).mapColor(MapColor.YELLOW)));
+    public static final Block CHERRY_DRAWERS = registerBlock("cherry_drawers", new DrawersBlock(AbstractBlock.Settings.create()
+            .nonOpaque().strength(1.75f).sounds(BlockSoundGroup.CHERRY_WOOD).mapColor(MapColor.TERRACOTTA_WHITE)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(FatalFurniture.MOD_ID, name), block);
     }
 
+    private static Block registerBlock(String name, Block block, Item.Settings settings) {
+        registerBlockItem(name, block, settings);
+        return Registry.register(Registries.BLOCK, Identifier.of(FatalFurniture.MOD_ID, name), block);
+    }
+
+
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(FatalFurniture.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
+    }
+
+    private static void registerBlockItem(String name, Block block, Item.Settings settings) {
+        Registry.register(Registries.ITEM, Identifier.of(FatalFurniture.MOD_ID, name),
+                new BlockItem(block, settings));
     }
 
     public static void registerModBlocks() {
@@ -227,6 +258,17 @@ public class ModBlocks {
             entries.add(WARPED_NOOK);
             entries.add(BAMBOO_NOOK);
             entries.add(CHERRY_NOOK);
+            entries.add(OAK_DRAWERS);
+            entries.add(BIRCH_DRAWERS);
+            entries.add(DARK_OAK_DRAWERS);
+            entries.add(SPRUCE_DRAWERS);
+            entries.add(JUNGLE_DRAWERS);
+            entries.add(ACACIA_DRAWERS);
+            entries.add(MANGROVE_DRAWERS);
+            entries.add(CRIMSON_DRAWERS);
+            entries.add(WARPED_DRAWERS);
+            entries.add(BAMBOO_DRAWERS);
+            entries.add(CHERRY_DRAWERS);
         });
     }
 }
