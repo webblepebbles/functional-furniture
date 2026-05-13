@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "fatalfurniture:block/spruce_drawers",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "fatalfurniture:block/spruce_drawers"
+    },
+    "facing=south": {
+      "model": "fatalfurniture:block/spruce_drawers",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fatalfurniture:block/spruce_drawers",
+      "y": 270
+    }
+  }
+}

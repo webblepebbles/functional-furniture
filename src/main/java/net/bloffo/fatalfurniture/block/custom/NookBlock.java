@@ -69,21 +69,21 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
                                              PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof NookBlockEntity tableBlockEntity) {
-            if(tableBlockEntity.isEmpty() && !stack.isEmpty()) {
-                tableBlockEntity.setStack(0, stack.copyWithCount(1));
+        if(world.getBlockEntity(pos) instanceof NookBlockEntity NookBlockEntity) {
+            if(NookBlockEntity.isEmpty() && !stack.isEmpty()) {
+                NookBlockEntity.setStack(0, stack.copyAndEmpty());
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
-                tableBlockEntity.markDirty();
+                NookBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
             } else if(stack.isEmpty() && !player.isSneaking()) {
-                ItemStack stackOntable = tableBlockEntity.getStack(0);
-                player.setStackInHand(Hand.MAIN_HAND, stackOntable);
+                ItemStack stackOnNook = NookBlockEntity.getStack(0);
+                player.setStackInHand(Hand.MAIN_HAND, stackOnNook);
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
-                tableBlockEntity.clear();
+                NookBlockEntity.clear();
 
-                tableBlockEntity.markDirty();
+                NookBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
             }
         }

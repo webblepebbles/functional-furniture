@@ -16,5 +16,11 @@
     "sounds": [
       "fatalfurniture:wirecutters_snip"
     ]
+  },
+  "lock_rattles": {
+    "subtitles": "sounds.fatalfurniture.lock_rattles",
+    "sounds": [
+      "fatalfurniture:lock"
+    ]
   }
 }

@@ -46,6 +46,17 @@
     "fatalfurniture:warped_nook",
     "fatalfurniture:crimson_nook",
     "fatalfurniture:bamboo_nook",
-    "fatalfurniture:cherry_nook"
+    "fatalfurniture:cherry_nook",
+    "fatalfurniture:oak_drawers",
+    "fatalfurniture:birch_drawers",
+    "fatalfurniture:dark_oak_drawers",
+    "fatalfurniture:spruce_drawers",
+    "fatalfurniture:jungle_drawers",
+    "fatalfurniture:acacia_drawers",
+    "fatalfurniture:mangrove_drawers",
+    "fatalfurniture:warped_drawers",
+    "fatalfurniture:crimson_drawers",
+    "fatalfurniture:bamboo_drawers",
+    "fatalfurniture:cherry_drawers"
   ]
 }

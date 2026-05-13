@@ -64,7 +64,7 @@ public class KnifeItem extends ToolItem {
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
         if (CouchBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(CouchBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
             System.out.println("knife");
@@ -75,10 +75,9 @@ public class KnifeItem extends ToolItem {
             return ActionResult.success(world.isClient());
         }
         if (PouffeBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(PouffeBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
-            System.out.println("knife");
             if (playerEntity != null) {
                 context.getStack().decrement(1);
             }
@@ -86,10 +85,9 @@ public class KnifeItem extends ToolItem {
             return ActionResult.success(world.isClient());
         }
         if (CushionBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, ModSounds.CUSHION_RUSTLES, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(CushionBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
-            System.out.println("knife");
             if (playerEntity != null) {
                 context.getStack().decrement(1);
             }

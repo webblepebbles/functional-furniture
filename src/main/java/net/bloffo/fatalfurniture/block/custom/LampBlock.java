@@ -36,7 +36,7 @@ public class LampBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if(!world.isClient()) {
-            world.playSound(null, pos, ModSounds.LAMP_CLICKS, SoundCategory.BLOCKS);
+            world.playSound(null, pos, ModSounds.LAMP_CLICKS, SoundCategory.BLOCKS, 2.0F, 0.75F);
             world.setBlockState(pos, state.cycle(ON));
         }
             return ActionResult.SUCCESS;

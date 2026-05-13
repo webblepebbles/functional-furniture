@@ -1,6 +1,7 @@
 package net.bloffo.fatalfurniture.item;
 
 import net.bloffo.fatalfurniture.FatalFurniture;
+import net.bloffo.fatalfurniture.item.custom.KeyItem;
 import net.bloffo.fatalfurniture.item.custom.KnifeItem;
 import net.bloffo.fatalfurniture.item.custom.WirecutterItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -14,6 +15,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item WIRECUTTERS = registerItem("wirecutters", new WirecutterItem(new Item.Settings().maxDamage(32).maxCount(1)));
+    public static final Item KEY = registerItem("key", new KeyItem(new Item.Settings().maxCount(1)));
     public static final Item KNIFE = registerItem("knife", new KnifeItem(ToolMaterials.IRON, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON, 2, -1.0f))));
 
@@ -26,6 +28,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.add(WIRECUTTERS);
             entries.add(KNIFE);
+            entries.add(KEY);
         });
     }
 }

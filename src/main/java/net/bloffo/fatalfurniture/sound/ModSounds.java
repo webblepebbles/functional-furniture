@@ -8,8 +8,8 @@ import net.minecraft.util.Identifier;
 
 public class ModSounds {
     public static final SoundEvent LAMP_CLICKS = registerSoundEvent("lamp_clicks");
-    public static final SoundEvent CUSHION_RUSTLES = registerSoundEvent("cushion_rustles");
     public static final SoundEvent WIRECUTTERS_SNIP = registerSoundEvent("wirecutters_snip");
+    public static final SoundEvent LOCK_RATTLES = registerSoundEvent("lock_rattles");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(FatalFurniture.MOD_ID, name);

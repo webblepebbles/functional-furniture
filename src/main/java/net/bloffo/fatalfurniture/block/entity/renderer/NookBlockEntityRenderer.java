@@ -41,8 +41,8 @@ public class NookBlockEntityRenderer implements BlockEntityRenderer<NookBlockEnt
         matrices.scale(0.5f, 0.5f, 0.5f);
         float yRot = switch (facing) {
             case NORTH -> 180f;
-            case WEST  -> 90f;
-            case EAST  -> 270f;
+            case WEST  -> 270f;
+            case EAST  -> 90f;
             default    -> 0f;
         };
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(yRot));
