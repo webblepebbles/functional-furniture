@@ -2,8 +2,8 @@ package net.bloffo.fatalfurniture.item.custom;
 
 import net.bloffo.fatalfurniture.block.custom.DrawersBlock;
 import net.bloffo.fatalfurniture.component.ModDataComponentTypes;
+import net.bloffo.fatalfurniture.sound.DrawerSecurity;
 import net.bloffo.fatalfurniture.sound.ModSounds;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -34,7 +34,7 @@ public class KeyItem extends Item {
         if (DrawersBlock.canlock(blockState)) {
             if (!context.getStack().contains(ModDataComponentTypes.POSITION)) {
                 world.playSound(playerEntity, blockPos, ModSounds.LOCK_RATTLES, SoundCategory.BLOCKS, 0.3F, 1.0F);
-                world.setBlockState(blockPos, blockState.with(DrawersBlock.LOCKED, true), Block.NOTIFY_ALL_AND_REDRAW);
+                DrawerSecurity.lockDrawer(world, blockPos, playerEntity);
                 world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
                 context.getStack().set(ModDataComponentTypes.POSITION, context.getBlockPos());
                 return ActionResult.success(world.isClient());
@@ -46,8 +46,7 @@ public class KeyItem extends Item {
                 BlockPos POS = context.getStack().get(ModDataComponentTypes.POSITION);
                 if (POS.equals(blockPos)) {
                     world.playSound(playerEntity, blockPos, ModSounds.LOCK_RATTLES, SoundCategory.BLOCKS, 0.3F, 0.8F);
-                    world.setBlockState(blockPos, blockState.with(DrawersBlock.LOCKED, false),
-                            Block.NOTIFY_ALL_AND_REDRAW);
+                    DrawerSecurity.unlockDrawer(world, blockPos, playerEntity);
                     world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
                     context.getStack().remove(ModDataComponentTypes.POSITION);
                     return ActionResult.success(world.isClient());

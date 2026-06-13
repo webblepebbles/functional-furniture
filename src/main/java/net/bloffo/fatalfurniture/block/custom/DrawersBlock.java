@@ -105,6 +105,14 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
         return state.contains(LOCKED) && state.get(LOCKED);
     }
 
+    @Override
+    public float calcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos) {
+        if (state.get(LOCKED)) {
+            return 0.0F;
+        }
+        return super.calcBlockBreakingDelta(state, player, world, pos);
+    }
+
     protected boolean canPathfindThrough(BlockState state, NavigationType type) {
         return false;
     }
