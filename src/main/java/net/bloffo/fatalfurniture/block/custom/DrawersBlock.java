@@ -45,9 +45,9 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof DrawersBlockEntity) {
+            if (blockEntity instanceof DrawersBlockEntity) {
                 ItemScatterer.spawn(world, pos, ((DrawersBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
@@ -59,7 +59,8 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient() && !state.get(LOCKED)) {
             if (world.getBlockEntity(pos) instanceof DrawersBlockEntity drawersBlockEntity) {
-                world.playSound(null, pos, SoundEvents.BLOCK_BARREL_OPEN, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+                world.playSound(null, pos, SoundEvents.BLOCK_BARREL_OPEN, SoundCategory.BLOCKS, 1.0F,
+                        world.getRandom().nextFloat() * 0.4F + 0.8F);
                 player.openHandledScreen(drawersBlockEntity);
                 drawersBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
@@ -67,19 +68,21 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
         }
         return ActionResult.SUCCESS;
     }
+
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
-                                             PlayerEntity player, Hand hand, BlockHitResult hit) {
+            PlayerEntity player, Hand hand, BlockHitResult hit) {
         return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     public DrawersBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH).with(LOCKED, false));
+        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState())
+                .with(FACING, Direction.NORTH).with(LOCKED, false));
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+        return (BlockState) this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -87,15 +90,17 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
     protected BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+        return (BlockState) state.with(FACING, rotation.rotate((Direction) state.get(FACING)));
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, LOCKED);
     }
+
     public static boolean canlock(BlockState state) {
         return state.contains(LOCKED) && !state.get(LOCKED);
     }
+
     public static boolean canunlock(BlockState state) {
         return state.contains(LOCKED) && state.get(LOCKED);
     }
@@ -110,6 +115,7 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
 
     static {
         FACING = HorizontalFacingBlock.FACING;
-        BASE_SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)16.0F, (double)16.0F);
+        BASE_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 0.0F, (double) 0.0F, (double) 16.0F,
+                (double) 16.0F, (double) 16.0F);
     }
 }

@@ -7,7 +7,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
@@ -19,9 +18,8 @@ import net.minecraft.world.World;
 
 public class LampBlock extends Block {
     public static final MapCodec<LampBlock> CODEC = createCodec(LampBlock::new);
-    private static final VoxelShape SHAPE =  Block.createCuboidShape(4, 0, 4, 12, 16, 12);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12, 16, 12);
     public static final BooleanProperty ON = BooleanProperty.of("on");
-
 
     public LampBlock(Settings settings) {
         super(settings);
@@ -35,11 +33,11 @@ public class LampBlock extends Block {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if(!world.isClient()) {
+        if (!world.isClient()) {
             world.playSound(null, pos, ModSounds.LAMP_CLICKS, SoundCategory.BLOCKS, 2.0F, 0.75F);
             world.setBlockState(pos, state.cycle(ON));
         }
-            return ActionResult.SUCCESS;
+        return ActionResult.SUCCESS;
     }
 
     @Override

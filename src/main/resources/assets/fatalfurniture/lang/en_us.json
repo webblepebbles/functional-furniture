@@ -47,7 +47,6 @@
   "block.fatalfurniture.pink_couch": "Pink Couch",
   "block.fatalfurniture.pink_cushion": "Pink Cushion",
   "block.fatalfurniture.pink_pouffe": "Pink Pouffe",
-
   "block.fatalfurniture.oak_nook": "Oak Nook",
   "block.fatalfurniture.birch_nook": "Birch Nook",
   "block.fatalfurniture.dark_oak_nook": "Dark Oak Nook",
@@ -59,7 +58,6 @@
   "block.fatalfurniture.crimson_nook": "Crimson Nook",
   "block.fatalfurniture.bamboo_nook": "Bamboo Nook",
   "block.fatalfurniture.cherry_nook": "Cherry Nook",
-
   "block.fatalfurniture.oak_drawers": "Oak Drawers",
   "block.fatalfurniture.birch_drawers": "Birch Drawers",
   "block.fatalfurniture.dark_oak_drawers": "Dark Oak Drawers",
@@ -71,18 +69,14 @@
   "block.fatalfurniture.crimson_drawers": "Crimson Drawers",
   "block.fatalfurniture.bamboo_drawers": "Bamboo Drawers",
   "block.fatalfurniture.cherry_drawers": "Cherry Drawers",
-
   "block.fatalfurniture.table": "Table",
   "block.fatalfurniture.lamp": "Lamp",
   "block.fatalfurniture.riggedlamp": "Rigged Lamp",
   "block.fatalfurniture.candle_stick": "Candle Stick",
-
   "item.fatalfurniture.wirecutters": "Wire Cutters",
   "item.fatalfurniture.knife": "Knife",
   "item.fatalfurniture.key": "Key",
-
   "death.attack.knife": "%1$s sat on a knife",
-
   "sounds.fatalfurniture.lamp_clicks": "Lamp clicks",
   "sounds.fatalfurniture.wirecutters_snip": "Wire cutters snip",
   "sounds.fatalfurniture.lock_rattles": "Lock rattles"

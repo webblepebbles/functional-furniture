@@ -28,20 +28,24 @@ public class KnifeItem extends ToolItem {
     public KnifeItem(ToolMaterial material, Settings settings) {
         super(material, settings);
     }
-    public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage, float attackSpeed) {
+
+    public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage,
+            float attackSpeed) {
         return AttributeModifiersComponent.builder()
                 .add(
                         EntityAttributes.GENERIC_ATTACK_DAMAGE,
-                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, baseAttackDamage + material.getAttackDamage(), EntityAttributeModifier.Operation.ADD_VALUE),
-                        AttributeModifierSlot.MAINHAND
-                )
+                        new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID,
+                                baseAttackDamage + material.getAttackDamage(),
+                                EntityAttributeModifier.Operation.ADD_VALUE),
+                        AttributeModifierSlot.MAINHAND)
                 .add(
                         EntityAttributes.GENERIC_ATTACK_SPEED,
-                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, attackSpeed, EntityAttributeModifier.Operation.ADD_VALUE),
-                        AttributeModifierSlot.MAINHAND
-                )
+                        new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, attackSpeed,
+                                EntityAttributeModifier.Operation.ADD_VALUE),
+                        AttributeModifierSlot.MAINHAND)
                 .build();
     }
+
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         return !miner.isCreative();
@@ -64,7 +68,8 @@ public class KnifeItem extends ToolItem {
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
         if (CouchBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F,
+                    world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(CouchBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
             System.out.println("knife");
@@ -75,7 +80,8 @@ public class KnifeItem extends ToolItem {
             return ActionResult.success(world.isClient());
         }
         if (PouffeBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F,
+                    world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(PouffeBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
             if (playerEntity != null) {
@@ -85,7 +91,8 @@ public class KnifeItem extends ToolItem {
             return ActionResult.success(world.isClient());
         }
         if (CushionBlock.canaddKnife(blockState)) {
-            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F,
+                    world.getRandom().nextFloat() * 0.4F + 0.8F);
             world.setBlockState(blockPos, blockState.with(CushionBlock.KNIFE, true), Block.NOTIFY_ALL_AND_REDRAW);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
             if (playerEntity != null) {
@@ -93,10 +100,8 @@ public class KnifeItem extends ToolItem {
             }
 
             return ActionResult.success(world.isClient());
-        }
-        else {
+        } else {
             return ActionResult.FAIL;
         }
     }
 }
-

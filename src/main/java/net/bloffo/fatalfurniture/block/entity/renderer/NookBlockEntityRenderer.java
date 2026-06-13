@@ -21,16 +21,19 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 public class NookBlockEntityRenderer implements BlockEntityRenderer<NookBlockEntity> {
-    public NookBlockEntityRenderer(BlockEntityRendererFactory.Context context){
+    public NookBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
 
     }
 
     @Override
-    public void render(NookBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(NookBlockEntity entity, float tickDelta, MatrixStack matrices,
+            VertexConsumerProvider vertexConsumers, int light, int overlay) {
         World world = entity.getWorld();
-        if (world == null) return;
+        if (world == null)
+            return;
         BlockState state = world.getBlockState(entity.getPos());
-        if (!state.contains(HorizontalFacingBlock.FACING)) return;
+        if (!state.contains(HorizontalFacingBlock.FACING))
+            return;
         Direction facing = state.get(HorizontalFacingBlock.FACING);
 
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
@@ -41,9 +44,9 @@ public class NookBlockEntityRenderer implements BlockEntityRenderer<NookBlockEnt
         matrices.scale(0.5f, 0.5f, 0.5f);
         float yRot = switch (facing) {
             case NORTH -> 180f;
-            case WEST  -> 270f;
-            case EAST  -> 90f;
-            default    -> 0f;
+            case WEST -> 270f;
+            case EAST -> 90f;
+            default -> 0f;
         };
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(yRot));
 

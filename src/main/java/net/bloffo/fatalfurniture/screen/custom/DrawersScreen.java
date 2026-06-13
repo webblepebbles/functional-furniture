@@ -10,8 +10,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class DrawersScreen extends HandledScreen<DrawersScreenHandler> {
-    public static final Identifier GUI_TEXTURE =
-            Identifier.of(FatalFurniture.MOD_ID, "textures/gui/drawers/drawers_gui.png");
+    public static final Identifier GUI_TEXTURE = Identifier.of(FatalFurniture.MOD_ID,
+            "textures/gui/drawers/drawers_gui.png");
 
     public DrawersScreen(DrawersScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);

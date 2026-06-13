@@ -3,7 +3,6 @@ package net.bloffo.fatalfurniture.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.bloffo.fatalfurniture.entity.ModEntities;
 import net.bloffo.fatalfurniture.entity.custom.CushionEntity;
-import net.bloffo.fatalfurniture.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -31,7 +30,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class PouffeBlock extends Block{
+public class PouffeBlock extends Block {
     public static final MapCodec<PouffeBlock> CODEC = createCodec(PouffeBlock::new);
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 7, 13);
     public static final BooleanProperty KNIFE = BooleanProperty.of("knife");
@@ -41,18 +40,18 @@ public class PouffeBlock extends Block{
         setDefaultState(this.getDefaultState().with(KNIFE, false));
     }
 
-    private static final RegistryKey<DamageType> KNIFESIT =
-            RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
-                    Identifier.of("fatalfurniture", "knifedamage"));
+    private static final RegistryKey<DamageType> KNIFESIT = RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
+            Identifier.of("fatalfurniture", "knifedamage"));
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if(!world.isClient()) {
+        if (!world.isClient()) {
             Entity entity = null;
             List<CushionEntity> entities = world.getEntitiesByType(ModEntities.CUSHION, new Box(pos), cushion -> true);
-            if(entities.isEmpty()) {
+            if (entities.isEmpty()) {
                 if (!player.isSneaking()) {
-                    world.playSound(null, pos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+                    world.playSound(null, pos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F,
+                            world.getRandom().nextFloat() * 0.4F + 0.8F);
                     entity = ModEntities.CHAIR.spawn((ServerWorld) world, pos, SpawnReason.TRIGGERED);
                     if (state.get(KNIFE)) {
                         assert entity != null;

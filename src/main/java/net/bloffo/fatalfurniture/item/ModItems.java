@@ -14,14 +14,16 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item WIRECUTTERS = registerItem("wirecutters", new WirecutterItem(new Item.Settings().maxDamage(32).maxCount(1)));
+    public static final Item WIRECUTTERS = registerItem("wirecutters",
+            new WirecutterItem(new Item.Settings().maxDamage(32).maxCount(1)));
     public static final Item KEY = registerItem("key", new KeyItem(new Item.Settings().maxCount(1)));
     public static final Item KNIFE = registerItem("knife", new KnifeItem(ToolMaterials.IRON, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON, 2, -1.0f))));
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON, 2, -1.0f))));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(FatalFurniture.MOD_ID, name), item);
     }
+
     public static void registerModItems() {
         FatalFurniture.LOGGER.info("Registering mod items for " + FatalFurniture.MOD_ID);
 

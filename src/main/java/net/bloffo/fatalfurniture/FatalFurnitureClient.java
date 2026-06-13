@@ -17,7 +17,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 
-public class    FatalFurnitureClient implements ClientModInitializer {
+public class FatalFurnitureClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         HandledScreens.register(ModScreenHandlers.DRAWERS_SCREEN_HANDLER, DrawersScreen::new);

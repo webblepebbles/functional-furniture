@@ -16,10 +16,9 @@ import net.minecraft.world.World;
 import java.util.Map;
 
 public class WirecutterItem extends Item {
-    private static final Map<Block, Block> WirecutterMap =
-            Map.of(
-                    ModBlocks.LAMP, ModBlocks.RIGGEDLAMP
-            );
+    private static final Map<Block, Block> WirecutterMap = Map.of(
+            ModBlocks.LAMP, ModBlocks.RIGGEDLAMP);
+
     public WirecutterItem(Settings settings) {
         super(settings);
     }

@@ -22,7 +22,8 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
-public class DrawersBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
+public class DrawersBlockEntity extends BlockEntity
+        implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
     public DrawersBlockEntity(BlockPos pos, BlockState state) {

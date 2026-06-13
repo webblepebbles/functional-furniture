@@ -3,7 +3,6 @@ package net.bloffo.fatalfurniture.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.bloffo.fatalfurniture.entity.ModEntities;
 import net.bloffo.fatalfurniture.entity.custom.ChairEntity;
-import net.bloffo.fatalfurniture.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -36,7 +35,7 @@ import java.util.List;
 
 public class CouchBlock extends HorizontalFacingBlock {
     public static final MapCodec<CouchBlock> CODEC = createCodec(CouchBlock::new);
-    private static final VoxelShape SHAPE =  Block.createCuboidShape(3, 0, 3, 13, 8, 13);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 8, 13);
     public static final BooleanProperty KNIFE = BooleanProperty.of("knife");
 
     public CouchBlock(Settings settings) {
@@ -44,17 +43,17 @@ public class CouchBlock extends HorizontalFacingBlock {
         setDefaultState(this.getDefaultState().with(KNIFE, false));
     }
 
-    private static final RegistryKey<DamageType> KNIFESIT =
-            RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
-                    Identifier.of("fatalfurniture", "knifedamage"));
+    private static final RegistryKey<DamageType> KNIFESIT = RegistryKey.of(RegistryKeys.DAMAGE_TYPE,
+            Identifier.of("fatalfurniture", "knifedamage"));
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if(!world.isClient()) {
+        if (!world.isClient()) {
             Entity entity = null;
             List<ChairEntity> entities = world.getEntitiesByType(ModEntities.CHAIR, new Box(pos), chair -> true);
-            if(entities.isEmpty()) {
-                world.playSound(null, pos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            if (entities.isEmpty()) {
+                world.playSound(null, pos, SoundEvents.BLOCK_WOOL_STEP, SoundCategory.BLOCKS, 1.0F,
+                        world.getRandom().nextFloat() * 0.4F + 0.8F);
                 entity = ModEntities.CHAIR.spawn((ServerWorld) world, pos, SpawnReason.TRIGGERED);
                 if (state.get(KNIFE)) {
                     assert entity != null;
@@ -87,6 +86,7 @@ public class CouchBlock extends HorizontalFacingBlock {
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
+
     public static boolean canaddKnife(BlockState state) {
         return state.isIn(BlockTags.WOOL, statex -> statex.contains(KNIFE))
                 && !state.get(KNIFE);

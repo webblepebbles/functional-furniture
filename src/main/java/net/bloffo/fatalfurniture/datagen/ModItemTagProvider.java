@@ -8,7 +8,8 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends ItemTagProvider {
-    public ModItemTagProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookupFuture, CompletableFuture<TagLookup<Block>> blockTagLookupFuture) {
+    public ModItemTagProvider(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookupFuture,
+            CompletableFuture<TagLookup<Block>> blockTagLookupFuture) {
         super(output, registryLookupFuture, blockTagLookupFuture);
     }
 

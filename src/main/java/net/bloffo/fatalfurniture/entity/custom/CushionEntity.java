@@ -19,13 +19,13 @@ public class CushionEntity extends Entity {
 
     }
 
-
     private void tickController(World world) {
         if (this.getFirstPassenger() instanceof PlayerEntity playerEntity) {
             boolean bl = playerEntity.hasStatusEffect(StatusEffects.REGENERATION);
             boolean bl2 = world.getTime() % 40L == 0L;
             if (!bl || bl2) {
-                playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0, true, true, true));
+                playerEntity
+                        .addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0, true, true, true));
             }
         }
     }

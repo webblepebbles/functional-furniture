@@ -17,12 +17,13 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 public class TableBlockEntityRenderer implements BlockEntityRenderer<TableBlockEntity> {
-    public TableBlockEntityRenderer(BlockEntityRendererFactory.Context context){
+    public TableBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
 
     }
 
     @Override
-    public void render(TableBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(TableBlockEntity entity, float tickDelta, MatrixStack matrices,
+            VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack stack = entity.getStack(0);
 

@@ -15,6 +15,7 @@ public class ModSounds {
         Identifier id = Identifier.of(FatalFurniture.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
+
     public static void registersounds() {
         FatalFurniture.LOGGER.info("registering sounds for" + FatalFurniture.MOD_ID);
     }

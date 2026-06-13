@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 public class RiggedLampBlock extends Block {
     public static final MapCodec<RiggedLampBlock> CODEC = createCodec(RiggedLampBlock::new);
-    private static final VoxelShape SHAPE =  Block.createCuboidShape(4, 0, 4, 12, 16, 12);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12, 16, 12);
 
     public RiggedLampBlock(Settings settings) {
         super(settings);
@@ -23,10 +23,11 @@ public class RiggedLampBlock extends Block {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if(!world.isClient()) {
+        if (!world.isClient()) {
             Vec3d vec3d = pos.toCenterPos();
             world.removeBlock(pos, false);
-            world.createExplosion(null, world.getDamageSources().explosion(null), null, vec3d, 2.0F, true, World.ExplosionSourceType.BLOCK);
+            world.createExplosion(null, world.getDamageSources().explosion(null), null, vec3d, 2.0F, true,
+                    World.ExplosionSourceType.BLOCK);
         }
         return ActionResult.SUCCESS;
     }

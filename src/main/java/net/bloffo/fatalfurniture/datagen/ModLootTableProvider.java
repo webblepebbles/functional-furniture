@@ -8,7 +8,8 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public ModLootTableProvider(FabricDataOutput dataOutput,
+            CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -63,7 +64,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINK_CUSHION);
         addDrop(ModBlocks.PINK_COUCH);
         addDrop(ModBlocks.TABLE);
-        
+
         addDrop(ModBlocks.LAMP);
     }
 }

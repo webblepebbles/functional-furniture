@@ -20,8 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class TableBlock extends BlockWithEntity implements BlockEntityProvider {
 
-    private static final VoxelShape SHAPE =
-            TableBlock.createCuboidShape(1, 0, 1, 15, 8, 15);
+    private static final VoxelShape SHAPE = TableBlock.createCuboidShape(1, 0, 1, 15, 8, 15);
     public static final MapCodec<TableBlock> CODEC = TableBlock.createCodec(TableBlock::new);
 
     public TableBlock(Settings settings) {
@@ -50,9 +49,9 @@ public class TableBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof TableBlockEntity) {
+            if (blockEntity instanceof TableBlockEntity) {
                 ItemScatterer.spawn(world, pos, ((TableBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
@@ -62,16 +61,16 @@ public class TableBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
-                                             PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof TableBlockEntity tableBlockEntity) {
-            if(tableBlockEntity.isEmpty() && !stack.isEmpty()) {
+            PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.getBlockEntity(pos) instanceof TableBlockEntity tableBlockEntity) {
+            if (tableBlockEntity.isEmpty() && !stack.isEmpty()) {
                 tableBlockEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
                 tableBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(stack.isEmpty() && !player.isSneaking()) {
+            } else if (stack.isEmpty() && !player.isSneaking()) {
                 ItemStack stackOntable = tableBlockEntity.getStack(0);
                 player.setStackInHand(Hand.MAIN_HAND, stackOntable);
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);

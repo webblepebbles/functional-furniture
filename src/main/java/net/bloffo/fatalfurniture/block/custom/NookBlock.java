@@ -56,9 +56,9 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof NookBlockEntity) {
+            if (blockEntity instanceof NookBlockEntity) {
                 ItemScatterer.spawn(world, pos, ((NookBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
@@ -68,16 +68,16 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
-                                             PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof NookBlockEntity NookBlockEntity) {
-            if(NookBlockEntity.isEmpty() && !stack.isEmpty()) {
+            PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.getBlockEntity(pos) instanceof NookBlockEntity NookBlockEntity) {
+            if (NookBlockEntity.isEmpty() && !stack.isEmpty()) {
                 NookBlockEntity.setStack(0, stack.copyAndEmpty());
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
                 NookBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(stack.isEmpty() && !player.isSneaking()) {
+            } else if (stack.isEmpty() && !player.isSneaking()) {
                 ItemStack stackOnNook = NookBlockEntity.getStack(0);
                 player.setStackInHand(Hand.MAIN_HAND, stackOnNook);
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
@@ -93,15 +93,16 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
 
     public NookBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
+        this.setDefaultState(
+                (BlockState) ((BlockState) this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
+        return (BlockState) this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
     }
 
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        Direction direction = (Direction)state.get(FACING);
+        Direction direction = (Direction) state.get(FACING);
         return direction.getAxis() == Direction.Axis.X ? X_AXIS_SHAPE : Z_AXIS_SHAPE;
     }
 
@@ -110,11 +111,11 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
     }
 
     protected BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+        return (BlockState) state.with(FACING, rotation.rotate((Direction) state.get(FACING)));
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING});
+        builder.add(new Property[] { FACING });
     }
 
     protected boolean canPathfindThrough(BlockState state, NavigationType type) {
@@ -127,13 +128,19 @@ public class NookBlock extends BlockWithEntity implements BlockEntityProvider {
 
     static {
         FACING = HorizontalFacingBlock.FACING;
-        BASE_SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)2.0F, (double)16.0F);
-        TOP_SHAPE = Block.createCuboidShape((double)0.0F, (double)14.0F, (double)0.0F, (double)16.0F, (double)16.0F, (double)16.0F);
-        WEST_SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)0.0F, (double)2.0F, (double)16.0F, (double)16.0F);
-        EAST_SHAPE = Block.createCuboidShape((double)14.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)16.0F, (double)16.0F);
-        NORTH_SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)16.0F, (double)2.0F);
-        SOUTH_SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)14.0F, (double)16.0F, (double)16.0F, (double)16.0F);
-        X_AXIS_SHAPE = VoxelShapes.union(BASE_SHAPE, new VoxelShape[]{TOP_SHAPE, SOUTH_SHAPE, NORTH_SHAPE});
-        Z_AXIS_SHAPE = VoxelShapes.union(BASE_SHAPE, new VoxelShape[]{TOP_SHAPE, WEST_SHAPE, EAST_SHAPE});
+        BASE_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 0.0F, (double) 0.0F, (double) 16.0F, (double) 2.0F,
+                (double) 16.0F);
+        TOP_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 14.0F, (double) 0.0F, (double) 16.0F,
+                (double) 16.0F, (double) 16.0F);
+        WEST_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 0.0F, (double) 0.0F, (double) 2.0F, (double) 16.0F,
+                (double) 16.0F);
+        EAST_SHAPE = Block.createCuboidShape((double) 14.0F, (double) 0.0F, (double) 0.0F, (double) 16.0F,
+                (double) 16.0F, (double) 16.0F);
+        NORTH_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 0.0F, (double) 0.0F, (double) 16.0F,
+                (double) 16.0F, (double) 2.0F);
+        SOUTH_SHAPE = Block.createCuboidShape((double) 0.0F, (double) 0.0F, (double) 14.0F, (double) 16.0F,
+                (double) 16.0F, (double) 16.0F);
+        X_AXIS_SHAPE = VoxelShapes.union(BASE_SHAPE, new VoxelShape[] { TOP_SHAPE, SOUTH_SHAPE, NORTH_SHAPE });
+        Z_AXIS_SHAPE = VoxelShapes.union(BASE_SHAPE, new VoxelShape[] { TOP_SHAPE, WEST_SHAPE, EAST_SHAPE });
     }
 }

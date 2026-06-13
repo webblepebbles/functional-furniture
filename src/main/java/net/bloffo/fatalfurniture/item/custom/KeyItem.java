@@ -41,11 +41,13 @@ public class KeyItem extends Item {
             }
         } else {
             if (DrawersBlock.canunlock(blockState)) {
-                if (!context.getStack().contains(ModDataComponentTypes.POSITION)) return ActionResult.FAIL;
+                if (!context.getStack().contains(ModDataComponentTypes.POSITION))
+                    return ActionResult.FAIL;
                 BlockPos POS = context.getStack().get(ModDataComponentTypes.POSITION);
                 if (POS.equals(blockPos)) {
                     world.playSound(playerEntity, blockPos, ModSounds.LOCK_RATTLES, SoundCategory.BLOCKS, 0.3F, 0.8F);
-                    world.setBlockState(blockPos, blockState.with(DrawersBlock.LOCKED, false), Block.NOTIFY_ALL_AND_REDRAW);
+                    world.setBlockState(blockPos, blockState.with(DrawersBlock.LOCKED, false),
+                            Block.NOTIFY_ALL_AND_REDRAW);
                     world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
                     context.getStack().remove(ModDataComponentTypes.POSITION);
                     return ActionResult.success(world.isClient());
@@ -59,9 +61,8 @@ public class KeyItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(stack.get(ModDataComponentTypes.POSITION) != null){
+        if (stack.get(ModDataComponentTypes.POSITION) != null) {
             tooltip.add(Text.literal("Unlocks " + stack.get(ModDataComponentTypes.POSITION)));
         }
     }
 }
-
