@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 public class DrawersBlockEntity extends BlockEntity
         implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> savedInventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
     public DrawersBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.DRAWERS_BE, pos, state);
@@ -35,16 +37,38 @@ public class DrawersBlockEntity extends BlockEntity
         return inventory;
     }
 
+    public DefaultedList<ItemStack> getSavedItems() {
+        return savedInventory;
+    }
+
+    public void setSavedItems(DefaultedList<ItemStack> items) {
+        savedInventory.clear();
+        for (int i = 0; i < items.size() && i < savedInventory.size(); i++) {
+            savedInventory.set(i, items.get(i).copy());
+        }
+    }
+
+    public void clearSavedItems() {
+        savedInventory.clear();
+    }
+
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.writeNbt(nbt, registryLookup);
         Inventories.writeNbt(nbt, inventory, registryLookup);
+        NbtCompound savedNbt = new NbtCompound();
+        Inventories.writeNbt(savedNbt, savedInventory, registryLookup);
+        nbt.put("SavedItems", savedNbt);
     }
 
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);
         Inventories.readNbt(nbt, inventory, registryLookup);
+        if (nbt.contains("SavedItems", NbtElement.COMPOUND_TYPE)) {
+            NbtCompound savedNbt = nbt.getCompound("SavedItems");
+            Inventories.readNbt(savedNbt, savedInventory, registryLookup);
+        }
     }
 
     @Nullable

@@ -3,8 +3,13 @@ package net.bloffo.fatalfurniture.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.bloffo.fatalfurniture.block.entity.custom.DrawersBlockEntity;
 import net.minecraft.block.*;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.Box;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -44,11 +49,26 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
     @Override
+    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack tool, boolean dropExperience) {
+        if (!state.get(LOCKED)) {
+            super.onStacksDropped(state, world, pos, tool, dropExperience);
+        }
+    }
+
+    @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof DrawersBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((DrawersBlockEntity) blockEntity));
+            if (blockEntity instanceof DrawersBlockEntity drawers) {
+                if (state.get(LOCKED)) {
+                    DefaultedList<ItemStack> saved = drawers.getSavedItems();
+                    super.onStateReplaced(state, world, pos, newState, moved);
+                    if (!world.isClient() && world instanceof ServerWorld serverWorld) {
+                        pendingReplacements.computeIfAbsent(serverWorld, k -> new java.util.ArrayList<>()).add(new ReplacementTask(pos, state, saved));
+                    }
+                    return;
+                }
+                ItemScatterer.spawn(world, pos, drawers);
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -119,6 +139,46 @@ public class DrawersBlock extends BlockWithEntity implements BlockEntityProvider
 
     public int getColor(BlockState state, BlockView world, BlockPos pos) {
         return state.getMapColor(world, pos).color;
+    }
+
+    private static final java.util.Map<ServerWorld, java.util.List<ReplacementTask>> pendingReplacements = new java.util.HashMap<>();
+
+    private static class ReplacementTask {
+        private final BlockPos pos;
+        private final BlockState state;
+        private final DefaultedList<ItemStack> saved;
+
+        ReplacementTask(BlockPos pos, BlockState state, DefaultedList<ItemStack> saved) {
+            this.pos = pos;
+            this.state = state;
+            this.saved = saved;
+        }
+    }
+
+    public static void registerTickHandler() {
+        ServerTickEvents.END_WORLD_TICK.register(world -> {
+            java.util.List<ReplacementTask> tasks = pendingReplacements.remove(world);
+            if (tasks != null) {
+                for (ReplacementTask task : tasks) {
+                    world.setBlockState(task.pos, task.state, Block.NOTIFY_ALL);
+                    BlockEntity newBe = world.getBlockEntity(task.pos);
+                    if (newBe instanceof DrawersBlockEntity newDrawers) {
+                        for (int i = 0; i < task.saved.size(); i++) {
+                            newDrawers.getItems().set(i, task.saved.get(i).copy());
+                        }
+                        newDrawers.setSavedItems(task.saved);
+                        newDrawers.markDirty();
+                    }
+                    removeDroppedItems(world, task.pos);
+                }
+            }
+        });
+    }
+
+    private static void removeDroppedItems(ServerWorld world, BlockPos pos) {
+        for (ItemEntity entity : world.getEntitiesByClass(ItemEntity.class, new Box(pos).expand(0.5), e -> true)) {
+            entity.discard();
+        }
     }
 
     static {

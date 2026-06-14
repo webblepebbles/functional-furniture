@@ -32,6 +32,7 @@ public class DrawerSecurity {
             for (int i = 0; i < saved.size(); i++) {
                 newDrawers.getItems().set(i, saved.get(i));
             }
+            newDrawers.setSavedItems(saved);
             newDrawers.markDirty();
         }
     }
@@ -53,6 +54,7 @@ public class DrawerSecurity {
             for (int i = 0; i < saved.size(); i++) {
                 newDrawers.getItems().set(i, saved.get(i));
             }
+            newDrawers.clearSavedItems();
             newDrawers.markDirty();
         }
     }
